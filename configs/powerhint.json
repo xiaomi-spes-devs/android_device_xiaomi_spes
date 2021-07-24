@@ -241,15 +241,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "PMQoSCpuDmaLatency",
-      "Path": "/dev/cpu_dma_latency",
-      "Values": [
-        "61",
-        "100"
-      ],
-      "HoldFd": true
-    },
-    {
       "Name": "UfsClkGateEnable",
       "Path": "/sys/devices/platform/soc/4804000.ufshc/clkgate_enable",
       "Values": [
@@ -385,12 +376,6 @@
     },
     {
       "PowerHint": "LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 5000,
-      "Value": "61"
-    },
-    {
-      "PowerHint": "LAUNCH",
       "Node": "CPUBWHystTriggerCount",
       "Duration": 5000,
       "Value": "0"
@@ -503,22 +488,10 @@
       "Value": "15"
     },
     {
-      "PowerHint": "AUDIO_LAUNCH",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 0,
-      "Value": "61"
-    },
-    {
       "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
       "Node": "PowerHALAudioState",
       "Duration": 0,
       "Value": "AUDIO_STREAMING_LOW_LATENCY"
-    },
-    {
-      "PowerHint": "AUDIO_STREAMING_LOW_LATENCY",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 0,
-      "Value": "61"
     },
     {
       "PowerHint": "EXPENSIVE_RENDERING",
@@ -537,12 +510,6 @@
       "Node": "GPUMaxFreq",
       "Duration": 0,
       "Value": "0"
-    },
-    {
-      "PowerHint": "ML_ACC",
-      "Node": "PMQoSCpuDmaLatency",
-      "Duration": 2000,
-      "Value": "61"
     },
     {
       "PowerHint": "FIXED_PERFORMANCE",
