@@ -69,6 +69,9 @@ genfscon sysfs /devices/platform/soc/soc:qcom,nopmi-chg/power_supply/usb        
 # UFS
 genfscon sysfs /devices/platform/soc/4804000.ufshc/clkgate_enable                                   u:object_r:vendor_sysfs_scsi_host:s0
 
+# Sensors
+genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor                                         u:object_r:vendor_sysfs_sensors:s0
+
 # Wakeup source stats
 genfscon sysfs /devices/platform/soc/soc:ant_check/wakeup                                                                                                                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:ant_check/power/wakeup                                                                                                                      u:object_r:sysfs_wakeup:s0
