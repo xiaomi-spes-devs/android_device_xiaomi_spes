@@ -20,8 +20,6 @@ vendor.camera.aux.packagelist=com.android.camera,app.grapheneos.camera,org.linea
 
 # Charger
 persist.vendor.quick.charge=1
-ro.charger.disable_init_blank=true
-ro.charger.enable_suspend=1
 
 # CNE
 persist.vendor.cne.feature=1
