@@ -915,21 +915,6 @@ system_ext/lib/libmmparser_lite.so
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/lib/libmmosal.so;MODULE_SUFFIX=_vendor
 
-# Media OMX
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAmrDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxDsdDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxG711Dec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxVideoDSMode.so;DISABLE_CHECKELF
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libdsd2pcm.so
-vendor/lib/libswvdec.so
-
 # Mlipay
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mtdservice.xml
