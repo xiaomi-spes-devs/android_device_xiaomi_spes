@@ -217,7 +217,8 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
-    android.hardware.drm-service.clearkey
+    android.hardware.drm-service.clearkey \
+    libcrypto_shim
 
 # Fastbootd
 PRODUCT_PACKAGES += \
