@@ -345,8 +345,7 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     init.mdm.sh \
-    init.qcom.sh \
-    init.qcom.usb.sh
+    init.qcom.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -354,7 +353,6 @@ PRODUCT_PACKAGES += \
     fstab.zram \
     init.qcom.power.rc \
     init.qcom.rc \
-    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.stnfc.rc \
     init.target.rc \
@@ -378,7 +376,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/qcom/opensource/usb/etc
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -413,7 +412,11 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.2.vendor
+    android.hardware.usb-service.qti
+
+PRODUCT_PACKAGES += \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
