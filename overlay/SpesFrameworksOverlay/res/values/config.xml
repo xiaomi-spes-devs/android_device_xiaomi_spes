@@ -713,10 +713,13 @@
     <!-- Not allow to switch to higher refresh rate when (display, ambient) brightness falls into
          the region defined by the two arrays -->
     <integer-array name="config_brightnessThresholdsOfPeakRefreshRate">
-        <item>-1</item>
-    </integer-array>
+         <!-- System brightness for 15 nits: round((15-2)/(1000-2)*(255-1)+1) -->
+         <item>4</item> <!-- 20% UI brightness -->
+         <!-- System brightness for 25 nits: round((25-2)/(1000-2)*(255-1)+1) -->
+         <item>7</item> <!-- 27% UI brightnes -->    </integer-array>
     <integer-array name="config_ambientThresholdsOfPeakRefreshRate">
         <item>-1</item>
+        <item>5</item>
     </integer-array>
 
     <!-- default refresh rate in the zone defined by brightness and ambient thresholds -->
