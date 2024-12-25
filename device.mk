@@ -321,7 +321,8 @@ PRODUCT_PACKAGES += \
     SpesSettingsProviderOverlay \
     SpesSystemUIOverlay \
     SpesTelephonyOverlay \
-    SpesWifiOverlay
+    SpesWifiOverlay \
+    NcmTetheringOverlay
 
 # Partitions
 PRODUCT_PACKAGES += \
