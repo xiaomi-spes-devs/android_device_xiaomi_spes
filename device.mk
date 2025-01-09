@@ -185,6 +185,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+PRODUCT_PACKAGES += \
+    gralloc.qcom
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
