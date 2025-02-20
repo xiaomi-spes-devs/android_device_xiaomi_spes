@@ -20,7 +20,6 @@ prebuilt_etc {
     name: "fstab.qcom",
     src: "fstab.qcom",
     vendor: true,
-    ramdisk_available: true,
 }
 
 prebuilt_etc {
