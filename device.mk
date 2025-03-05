@@ -281,6 +281,16 @@ PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
 # Media
+PRODUCT_PACKAGES += \
+    android.hardware.media.omx@1.0-service
+
+PRODUCT_PACKAGES += \
+    libOmxCore \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw \
+    libstagefright_omx.vendor
+
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/media/,$(TARGET_COPY_OUT_VENDOR)/etc) \
     $(LOCAL_PATH)/configs/media/media_profiles.xml:$(TARGET_COPY_OUT_ODM)/etc/media_profiles_V1_0.xml
