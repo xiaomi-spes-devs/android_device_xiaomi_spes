@@ -33,6 +33,16 @@ bluetooth.profile.sap.server.enabled=false
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
+# LMKD
+ro.lmk.filecache_min_kb=300000
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=100
+ro.lmk.psi_complete_stall_ms=50
+ro.lmk.psi_partial_stall_ms=50
+ro.lmk.swap_util_max=90
+ro.lmk.thrashing_limit=50
+ro.lmk.thrashing_limit_decay=25
+
 # Display
 debug.sf.disable_backpressure=1
 
