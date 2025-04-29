@@ -237,6 +237,8 @@ PRODUCT_PACKAGES += \
     liboffloadhal
 
 # Init
+$(call soong_config_set,libinit,vendor_init_lib,libinit_spes)
+
 PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.sh
