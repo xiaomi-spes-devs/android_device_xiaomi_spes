@@ -587,9 +587,6 @@
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
     <bool name="config_useVideoPauseWorkaround">true</bool>
 
-    <!-- Flag indicating if the speed up audio on mt call code should be executed -->
-    <bool name="config_speed_up_audio_on_mt_calls">true</bool>
-
     <!-- Idle current for bluetooth controller. 0 by default-->
     <integer translatable="false" name="config_bluetooth_idle_cur_ma">7</integer>
 
