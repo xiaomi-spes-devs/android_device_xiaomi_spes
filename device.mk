@@ -298,7 +298,7 @@ PRODUCT_COPY_FILES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service.st \
+    android.hardware.nfc-service.st \
     com.android.nfc_extras \
     nfc_nci.st21nfc.default \
     Tag
