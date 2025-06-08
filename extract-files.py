@@ -68,6 +68,8 @@ blob_fixups: blob_fixups_user_type = {
         .sig_replace('13 0A 00 94', '1F 20 03 D5'),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    ('vendor/bin/STFlashTool', 'vendor/lib64/libstfactory-vendor.so'): blob_fixup()
+	.add_needed('libbase_shim.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
