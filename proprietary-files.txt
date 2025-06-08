@@ -931,12 +931,12 @@ vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
-vendor/bin/STFlashTool;DISABLE_CHECKELF
+vendor/bin/STFlashTool
 vendor/etc/libnfc-hal-st.conf
 vendor/etc/libnfc-nci.conf
 vendor/etc/st21nfc_conf.txt
 vendor/lib64/libst_sr_models.so
-vendor/lib64/libstfactory-vendor.so;DISABLE_CHECKELF
+vendor/lib64/libstfactory-vendor.so
 vendor/lib64/nfc_nci.st21nfc.st.so
 
 # NFC Firmware
