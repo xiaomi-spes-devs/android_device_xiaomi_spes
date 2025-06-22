@@ -94,6 +94,27 @@ on property:sys.boot_completed=1
     write /sys/block/sda/queue/nr_requests 128
     write /sys/block/sda/queue/iostats 1
 
+    # Setup final cpu.uclamp
+    write /dev/cpuctl/top-app/cpu.uclamp.min 1
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
+
+    # Set uclamp.max for some groups, which could indicate cpu importance used in scheduling
+    write /dev/cpuctl/background/cpu.uclamp.max 13
+    write /dev/cpuctl/system-background/cpu.uclamp.max 51
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max -2
+
+    # Setup cpu.shares to throttle background groups (bg ~ 5% sysbg ~ 5% dex2oat ~2.5%)
+    write /dev/cpuctl/background/cpu.shares 1024
+    write /dev/cpuctl/system-background/cpu.shares 1024
+    write /dev/cpuctl/dex2oat/cpu.shares 512
+    write /dev/cpuctl/system/cpu.shares 20480
+    # We only have system and background groups holding tasks and the groups below are empty
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+    write /dev/cpuctl/foreground/cpu.shares 20480
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+    write /dev/cpuctl/rt/cpu.shares 20480
+    write /dev/cpuctl/top-app/cpu.shares 20480
+
     # Setup runtime blkio
     # value for group_idle is us
     write /dev/blkio/blkio.weight 1000
@@ -129,6 +150,11 @@ on init
     write /sys/block/sda/queue/iosched/slice_idle 0
     write /sys/block/sda/queue/nr_requests 256
 
+    # Set uclamp_min to capacity of little core + 1 to avoid little core
+    write /dev/cpuctl/top-app/cpu.uclamp.min 19
+    write /dev/cpuctl/foreground/cou.uclamp.min 19
+    write /dev/cpuctl/system-background/cpu.uclamp.min 19
+
     # Disable UFS powersaving
     write /sys/devices/platform/soc/${ro.boot.bootdevice}/clkgate_enable 0
 
@@ -157,3 +183,9 @@ on init
     write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled N
     write /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/suspend_enabled N
     write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/suspend_enabled N
+
+    # Add a boost for NNAPI HAL
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 512
+
+    # RT uclamp setting
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
