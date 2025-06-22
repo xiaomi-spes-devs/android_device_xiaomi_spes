@@ -179,6 +179,44 @@
       "ResetOnInit": true
     },
     {
+      "Name": "BGUClampMaxBoost",
+      "Path": "/dev/cpuctl/background/cpu.uclamp.max",
+      "Values": [
+        "13",
+        "51"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "Dex2oatUClampMaxBoost",
+      "Path": "/dev/cpuctl/dex2oat/cpu.uclamp.max",
+      "Values": [
+        "max",
+        "61"
+      ],
+      "DefaultIndex": 0,
+      "ResetOnInit": true
+    },
+    {
+      "Name": "TAUClampBoost",
+      "Path": "/dev/cpuctl/top-app/cpu.uclamp.min",
+      "Values": [
+        "76",
+        "1"
+      ],
+      "ResetOnInit": true
+    },
+    {
+      "Name": "FGUClampBoost",
+      "Path": "/dev/cpuctl/foreground/cpu.uclamp.min",
+      "Values": [
+        "15",
+        "0"
+      ],
+      "ResetOnInit": true
+    },
+    {
       "Name": "DDRLittleClusterMinFreq",
       "Path": "/sys/class/devfreq/soc:qcom,cpu0-cpu-ddr-lat/min_freq",
       "Values": [
@@ -329,6 +367,24 @@
     },
     {
       "PowerHint": "LAUNCH",
+      "Node": "BGUClampMaxBoost",
+      "Duration": 5000,
+      "Value": "51"
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "TAUClampBoost",
+      "Duration": 5000,
+      "Value": "76",
+    },
+    {
+      "PowerHint": "LAUNCH",
+      "Node": "FGUClampBoost",
+      "Duration": 5000,
+      "Value": "15"
+    },
+    {
+      "PowerHint": "LAUNCH",
       "Node": "PMQoSCpuDmaLatency",
       "Duration": 5000,
       "Value": "61"
@@ -411,6 +467,18 @@
       "Value": "9999999"
     },
     {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "BGUClampMaxBoost",
+      "Duration": 2000,
+      "Value": "51"
+    },
+    {
+      "PowerHint": "LAUNCH_EXTEND",
+      "Node": "Dex2oatUClampMaxBoost",
+      "Duration": 2000,
+      "Value": "61"
+    },
+    {
       "PowerHint": "DISPLAY_CHANGE",
       "Node": "CPUBigClusterMaxFreq",
       "Duration": 5000,
@@ -421,6 +489,18 @@
       "Node": "CPULittleClusterMaxFreq",
       "Duration": 5000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "TAUClampBoost",
+      "Duration": 5000,
+      "Value": "76"
+    },
+    {
+      "PowerHint": "DISPLAY_CHANGE",
+      "Node": "FGUClampBoost",
+      "Duration": 5000,
+      "Value": "15"
     },
     {
       "PowerHint": "AUDIO_LAUNCH",
@@ -565,6 +645,12 @@
       "Node": "CPUBigClusterMinFreq",
       "Duration": 1000,
       "Value": "9999999"
+    },
+    {
+      "PowerHint": "FP_STORAGE_ACCESS",
+      "Node": "TAUClampBoost",
+      "Duration": 1000,
+      "Value": "76"
     }
   ]
 }
