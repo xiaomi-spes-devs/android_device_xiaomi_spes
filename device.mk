@@ -341,7 +341,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3.vendor \
     android.hardware.power-service.pixel-libperfmgr \
-    libqti-perfd-client
+    libqti-perfd-client \
+    sendhint
 
 # Perf
 PRODUCT_COPY_FILES += \

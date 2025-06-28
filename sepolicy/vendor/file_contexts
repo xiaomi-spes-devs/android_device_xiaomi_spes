@@ -73,6 +73,7 @@
 
 # Power
 /vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr       u:object_r:hal_power_default_exec:s0
+/vendor/bin/sendhint                                                    u:object_r:sendhint_vendor_exec:s0
 
 # Sensors
 /sys/bus/iio/devices                                                                                                            u:object_r:vendor_sysfs_iio:s0
