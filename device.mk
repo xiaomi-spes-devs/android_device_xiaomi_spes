@@ -430,6 +430,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     usb_compositions.conf
 
+# Userfaultfd GC
+PRODUCT_ENABLE_UFFD_GC := true
+
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
