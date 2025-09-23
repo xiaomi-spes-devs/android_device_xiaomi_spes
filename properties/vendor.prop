@@ -108,9 +108,6 @@ persist.vendor.dpmhalservice.enable=1
 # DRM
 drm.service.enabled=true
 
-# FS-verity
-ro.apk_verity.mode=2
-
 # Fingerprint
 persist.vendor.fingerprint.type=side
 persist.vendor.fingerprint.sensor_location=1080|930|150|local:4630946773257169537,1080|930|150|local:4630946616659355009
