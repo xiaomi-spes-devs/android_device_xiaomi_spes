@@ -13,6 +13,8 @@ $(call inherit-product, device/xiaomi/spes/device.mk)
 
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # Product Specifics
 PRODUCT_NAME := lineage_spes
