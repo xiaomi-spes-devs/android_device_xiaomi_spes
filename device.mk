@@ -321,6 +321,7 @@ PRODUCT_PACKAGES += \
     SpesCarrierConfigOverlay \
     SpesDialerOverlay \
     SpesFrameworksOverlay \
+    SpesLauncherOverlay \
     SpesLineageSDKOverlay \
     SpesPartsOverlay \
     SpesSettingsOverlay \
