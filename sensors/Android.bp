@@ -5,7 +5,7 @@
 //
 
 cc_library_shared {
-    name: "sensors.xiaomi.v2",
+    name: "sensors.spes.v2",
     defaults: ["hidl_defaults"],
     srcs: [
         "Sensor.cpp",
@@ -29,7 +29,7 @@ cc_library_shared {
         "android.hardware.sensors@2.X-multihal",
     ],
     cflags: [
-        "-DLOG_TAG=\"sensors.xiaomi\"",
+        "-DLOG_TAG=\"sensors.spes\"",
     ],
     vendor: true,
 }
