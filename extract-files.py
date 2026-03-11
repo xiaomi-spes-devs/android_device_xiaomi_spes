@@ -10,6 +10,7 @@ from extract_utils.fixups_blob import (
 )
 from extract_utils.fixups_lib import (
     lib_fixups,
+    lib_fixup_remove,
     lib_fixups_user_type,
 )
 from extract_utils.main import (
