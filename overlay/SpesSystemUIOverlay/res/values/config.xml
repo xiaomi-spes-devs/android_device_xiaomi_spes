@@ -1,55 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/*
-** Copyright 2015, The Android Open Source Project
-**
-** Licensed under the Apache License, Version 2.0 (the "License");
-** you may not use this file except in compliance with the License.
-** You may obtain a copy of the License at
-**
-**     http://www.apache.org/licenses/LICENSE-2.0
-**
-** Unless required by applicable law or agreed to in writing, software
-** distributed under the License is distributed on an "AS IS" BASIS,
-** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-** See the License for the specific language governing permissions and
-** limitations under the License.
-*/
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
-
-<!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds. -->
 <resources>
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
-    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
-     vibrator is capable of subtle vibrations -->
-    <bool name="config_vibrateOnIconAnimation">true</bool>
+    <!-- Doze: whether the single tap sensor uses the proximity sensor.
+     If both this parameter and doze_selectively_register_prox are true, registration for the
+     sensor will be delayed when the device first enters dozing but the device has not entered its
+     low powered state yet. -->
+    <bool name="doze_single_tap_uses_prox">false</bool>
 
-    <!-- Respect drawable/rounded.xml intrinsic size for multiple radius corner path customization -->
-    <bool name="config_roundedCornerMultipleRadius">true</bool>
-
-    <!-- Preferred refresh rate at keyguard, if supported by the display -->
-    <integer name="config_keyguardRefreshRate">60</integer>
-
-    <!-- Preferred max refresh rate at keyguard, if supported by the display. -->
-    <integer name="config_keyguardMaxRefreshRate">60</integer>
-
-    <!-- Override value to use for proximity sensor.  -->
-    <string name="proximity_sensor_type" translatable="false">android.sensor.proximity</string>
-
-    <!-- If using proximity_sensor_type, specifies a threshold value to distinguish near and
-         far break points. A sensor value less than this is considered "near". -->
-    <item name="proximity_sensor_threshold" translatable="false" format="float" type="dimen">5</item>
+    <!-- Doze: whether the long press sensor uses the proximity sensor.
+     If both this parameter and doze_selectively_register_prox are true, registration for the
+     sensor will be delayed when the device first enters dozing but the device has not entered its
+     low powered state yet. -->
+    <bool name="doze_long_press_uses_prox">false</bool>
 
     <!-- Type of a sensor that provides a low-power estimate of the desired display
          brightness, suitable to listen to while the device is asleep (e.g. during
          always-on display) -->
     <string name="doze_brightness_sensor_type" translatable="false">xiaomi.sensor.aod</string>
 
+    <!-- Override value to use for proximity sensor.  -->
+    <string name="proximity_sensor_type" translatable="false">android.sensor.proximity</string>
+
+    <!-- If using proximity_sensor_type, specifies a threshold value to distinguish near and
+         far break points. A sensor value less than this is considered "near". -->
+    <item name="proximity_sensor_threshold" format="float" type="dimen">5</item>
+
     <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
-               to brightness values; -1 means keeping the current brightness. -->
+               to brightness values in the integer scale [1, 255]; -1 means keeping the current
+               brightness. -->
     <integer-array name="config_doze_brightness_sensor_to_brightness">
         <item>-1</item>    <!-- 0.0: Never used -->
         <item>-1</item>    <!-- 1.0: Never used -->
@@ -72,33 +56,26 @@
         <item>0</item>
     </integer-array>
 
-    <!-- Default rounded corner curve (a Bezier). Must match (the curved path in) rounded.xml.
-         Note that while rounded.xml includes the entire path (including the horizontal and vertical
-         corner edges), this pulls out just the curve.
-     -->
-    <string name="config_rounded_mask" translatable="false">M22,0C19.94,0.01 18.83,0.04 17.73,0.11C16.91,0.17 16.09,0.25 15.3,0.36C14.5,0.48 13.72,0.62 12.95,0.81C11.42,1.19 9.97,1.72 8.65,2.43C7.32,3.14 6.12,4.02 5.08,5.07C4.04,6.11 3.15,7.31 2.44,8.64C1.73,9.97 1.19,11.42 0.82,12.94C0.63,13.7 0.48,14.49 0.37,15.29C0.25,16.09 0.17,16.9 0.12,17.72C0.05,18.82 0.02,19.93 0.01,21.55</string>
-
-    <!-- Doze: whether the single tap sensor uses the proximity sensor.
-     If both this parameter and doze_selectively_register_prox are true, registration for the
-     sensor will be delayed when the device first enters dozing but the device has not entered its
-     low powered state yet. -->
-    <bool name="doze_single_tap_uses_prox">false</bool>
-
-    <!-- Doze: whether the long press sensor uses the proximity sensor.
-     If both this parameter and doze_selectively_register_prox are true, registration for the
-     sensor will be delayed when the device first enters dozing but the device has not entered its
-     low powered state yet. -->
-    <bool name="doze_long_press_uses_prox">false</bool>
-
-     <!-- Whether to play turbulence noise after clicking the play button -->
-    <bool name="config_turbulenceNoise">false</bool>
-
     <!-- Whether to show a warning notification when device's skin temperature is high. -->
     <integer name="config_showTemperatureWarning">1</integer>
 
     <!-- Whether to show a alarm dialog when device's usb port is overheating. -->
     <integer name="config_showUsbPortAlarm">1</integer>
 
-    <!-- If not zero, limits the internal screen recorder's framerate to the set value. -->
-    <integer name="config_screenRecorderMaxFramerate">60</integer>
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+     vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
+
+    <!-- Default rounded corner curve (a Bezier). Must match (the curved path in) rounded.xml.
+         Note that while rounded.xml includes the entire path (including the horizontal and vertical
+         corner edges), this pulls out just the curve.
+     -->
+    <string name="config_rounded_mask" translatable="false">M22,0C19.94,0.01 18.83,0.04 17.73,0.11C16.91,0.17 16.09,0.25 15.3,0.36C14.5,0.48 13.72,0.62 12.95,0.81C11.42,1.19 9.97,1.72 8.65,2.43C7.32,3.14 6.12,4.02 5.08,5.07C4.04,6.11 3.15,7.31 2.44,8.64C1.73,9.97 1.19,11.42 0.82,12.94C0.63,13.7 0.48,14.49 0.37,15.29C0.25,16.09 0.17,16.9 0.12,17.72C0.05,18.82 0.02,19.93 0.01,21.55</string>
+
+    <!-- Preferred refresh rate at keyguard, if supported by the display. Overrides
+         keyguardMaxRefreshRate. -->
+    <integer name="config_keyguardRefreshRate">60</integer>
+
+    <!-- Preferred max refresh rate at keyguard, if supported by the display. -->
+    <integer name="config_keyguardMaxRefreshRate">60</integer>
 </resources>
