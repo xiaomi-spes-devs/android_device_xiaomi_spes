@@ -344,8 +344,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.3.vendor \
     android.hardware.power-service.lineage-libperfmgr \
-    libqti-perfd-client \
-    sendhint
+    libqti-perfd-client
 
 # Public libraries
 PRODUCT_COPY_FILES += \
