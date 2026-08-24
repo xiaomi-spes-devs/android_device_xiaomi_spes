@@ -837,4 +837,7 @@
     <!-- Whether WM DisplayContent supports high performance transitions
          (lower-end devices may want to disable) -->
     <bool name="config_deviceSupportsHighPerfTransitions">false</bool>
+
+    <!-- Indicates whether device has a power button fingerprint sensor -->
+    <bool name="config_is_powerbutton_fps">true</bool>
 </resources>
