@@ -104,7 +104,6 @@ BOARD_KERNEL_CMDLINE +=  init.is_st2w_sensor=1
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/spes
-TARGET_KERNEL_NO_GCC := true
 TARGET_LINUX_KERNEL_VERSION := 4.19
 TARGET_KERNEL_CONFIG := \
 	vendor/bengal-perf_defconfig \
